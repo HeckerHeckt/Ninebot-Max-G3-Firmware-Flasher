@@ -2,58 +2,44 @@ Ninebot Max G3 Firmware Flasher
 A Python-based firmware flashing tool for Ninebot Max G3, G3D scooters.
 This project provides encrypted BLE communication, automatic device discovery, firmware version retrieval, and MCU firmware flashing through the IAP v2 protocol.
 
-Features
+Features:
 Automatic BLE scanning and device detection
-
 Automatic connection and pairing
-
 Encrypted communication using Ninebot BLE Crypto
-
 Firmware version retrieval (BLE, VCU, MCU, BMS)
-
 MCU firmware flashing (IAP v2)
-
 ZIP firmware package loading
 
-PyQt6 graphical user interface
-
-Optional Safe Mode (skip reset after flashing)
 
 Requirements
 Windows 10 or Windows 11
-
 Python 3.10 or newer
-
 Bluetooth Low Energy support
 
+
 Required Python packages:
-
 pip install bleak pyqt6
+
+
 Project files required:
-
 flasher.py (main GUI application)
-
 ninebot_ble.py (BLE session + encryption)
-
 iap_flash_v2.py (IAP v2 flashing logic)
+
 
 Running the Application
 Start the GUI by opening Start.bat
 
+
 Usage
 Power on your scooter.
-
 Click Scan to detect nearby Ninebot BLE devices.
-
 Select your scooter from the list.
-
 Load a firmware ZIP file.
-
 Click FLASH FIRMWARE.
-
 Press the scooter’s power button when pairing is requested.
-
 The flashing process will begin automatically.
+
 
 Firmware Version Retrieval
 The flasher reads firmware versions using encrypted BLE register access.
@@ -79,15 +65,13 @@ Flashing Process
 The tool uses the Ninebot IAP v2 protocol:
 
 Sends encrypted IAP commands
-
 Transfers firmware in pages
-
 Verifies checksum
-
 Optionally sends reset (unless Safe Mode is enabled)
 
+
 Project Structure
-Code
+
 flasher.py          GUI + FlashWorker + version retrieval
 ninebot_ble.py      BLE session, encryption, pairing
 iap_flash_v2.py     IAP v2 flashing implementation
